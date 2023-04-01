@@ -32,12 +32,11 @@ public class DbUtil {
 				 * "6cbad36d7efbdf936d6dfc94841fc17c1f518782d15ab48cfff785f24976d9c6");
 				 */
 				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-				settings.put(Environment.URL,
-						"mysql://b6beffce8edfda:9142e9de@us-cdbr-east-06.cleardb.net/heroku_7b7b169a0de96f4?");
+				settings.put(Environment.URL, "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_7b7b169a0de96f4");
 				settings.put(Environment.USER, "b6beffce8edfda");
 				settings.put(Environment.PASS, "9142e9de");
-
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+
 
 				/*
 				 * settings.put(Environment.URL,
