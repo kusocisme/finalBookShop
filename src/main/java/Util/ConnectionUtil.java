@@ -11,6 +11,7 @@ public class ConnectionUtil {
 
         try (FileInputStream f = new FileInputStream("db.properties")) {
 
+            Class.forName("com.mysql.cj.jdbc.Driver");
             // load the properties file
             Properties pros = new Properties();
             pros.load(f);
@@ -24,6 +25,8 @@ public class ConnectionUtil {
             conn = DriverManager.getConnection(url, user, password);
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return conn;
     }
