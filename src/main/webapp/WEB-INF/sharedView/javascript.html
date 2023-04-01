@@ -1,0 +1,87 @@
+  <script>
+    $(".carousel").owlCarousel({
+      margin: 20,
+      loop: true,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      smartSpeed: 1000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 2,
+          nav: false
+        },
+        600: {
+          items: 3,
+          nav: false
+        },
+        1000: {
+          items: 6,
+          nav: false
+        }
+      }
+    });
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+      items: 1,
+      loop: true,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      smartSpeed: 1000,
+      autoplayHoverPause: true,
+    });
+  </script>
+    <script>
+    function loadMoreNext() {
+    	var index = document.getElementsByClassName("index-product")[0].value;
+      $.ajax({
+        url: "/home?command=More&action=Next&amount=" + index,
+        type: "post", //send it through get method
+        success: function(data) {
+          var row = document.getElementById("content-load");
+          row.innerHTML = data;
+          //console.log(data);
+        },
+        error: function(xhr) {
+
+        }
+      });
+    }
+    function loadMorePrev() {
+    	var index = document.getElementsByClassName("index-product")[0].value;
+      $.ajax({
+        url: "/home?command=More&action=Prev&amount=" + index,
+        type: "post", //send it through get method
+        success: function(data) {
+          var row = document.getElementById("content-load");
+          row.innerHTML = data;
+          //console.log(data);
+        },
+        error: function(xhr) {
+
+        }
+      });
+    }
+    function loadMore() {
+    	var index = document.getElementsByClassName("index-product")[0].value;
+      $.ajax({
+        url: "/home?command=More&action=Import&amount=" + index,
+        type: "post", //send it through get method
+        success: function(data) {
+          var row = document.getElementById("content-load");
+          row.innerHTML += data;
+          //console.log(data);
+        },
+        error: function(xhr) {
+
+        }
+      });
+    }
+    
+
+    
+    
+
+  </script>
