@@ -31,13 +31,13 @@ public class DbUtil {
 				 * settings.put(Environment.PASS,
 				 * "6cbad36d7efbdf936d6dfc94841fc17c1f518782d15ab48cfff785f24976d9c6");
 				 */
-				settings.put(Environment.DRIVER, "org.postgresql.Driver");
+				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 				settings.put(Environment.URL,
-						"jdbc:postgresql://ec2-18-204-170-75.compute-1.amazonaws.com:5432/dcti81nb4p0eg8");
-				settings.put(Environment.USER, "hskuhhcqrrezwy");
-				settings.put(Environment.PASS, "6be2eb1fbef51ea763728e8a59b28b89af919f112573db96a23fe218109265b2");
+						"mysql://b6beffce8edfda:9142e9de@us-cdbr-east-06.cleardb.net/heroku_7b7b169a0de96f4?");
+				settings.put(Environment.USER, "b6beffce8edfda");
+				settings.put(Environment.PASS, "9142e9de");
 
-				settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
 				/*
 				 * settings.put(Environment.URL,
